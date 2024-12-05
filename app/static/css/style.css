@@ -23,7 +23,6 @@
 
 .content-project{
     display: flex;
-    align-items: center;
 }
 .content-project img{
     width: 160px;
@@ -31,6 +30,8 @@
     object-fit: cover;
     object-position: center;
     border-radius: 15px;
+    margin: 30px;
+    box-sizing: border-box;
 }
 
 table .col{
@@ -49,4 +50,20 @@ table .col{
 
 .text_align{
     text-align: justify;
+}
+
+.form-group{
+    margin: 20px;
+}
+
+nav .navbar a{
+    color: black;
+}
+
+td, tfoot, th, thead{
+    border-style: none;
+}
+
+.img{
+    width: 55%;
 }

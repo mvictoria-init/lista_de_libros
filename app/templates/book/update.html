@@ -2,7 +2,7 @@
 
 {% block content %}
 <section class="container-sm">
-    <h3 class="text-center mt-3 mb-3">{% block title %}Editar Tarea{% endblock %}</h3>
+    <h3 class="text-center mt-3 mb-3">{% block title %}Editar la información del libro{% endblock %}</h3>
     <form action="" method="post" enctype="multipart/form-data">
         <div class="form-group">
             <label for="title">Título</label>
@@ -18,7 +18,7 @@
         </div>
         <div class="form-group">
             <label for="desc">Descripción</label>
-            <textarea class="form-control" id="desc" name="desc" rows="3">{{ book.desc }}</textarea>
+            <textarea class="form-control" id="desc" name="desc" rows="4">{{ book.desc }}</textarea>
         </div>
         <div class="form-group">
             <label for="n_page">Número de paginas</label>
@@ -27,20 +27,21 @@
         <div class="form-group">
             <label for="desc">Puntuación</label>
             <div class="rating">
-                <input type="radio" name="rating" value="5" {% if book.punctuation == 5 %}checked{% endif %}>5⭐
+                <input type="radio" name="rating" value="5" {% if book.punctuation == 5 %}checked{% endif %}> 5 ⭐
                 <br>
-                <input type="radio" name="rating" value="4" {% if book.punctuation == 4 %}checked{% endif %}>4⭐
+                <input type="radio" name="rating" value="4" {% if book.punctuation == 4 %}checked{% endif %}> 4 ⭐
                 <br>
-                <input type="radio" name="rating" value="3" {% if book.punctuation == 3 %}checked{% endif %}>3⭐
+                <input type="radio" name="rating" value="3" {% if book.punctuation == 3 %}checked{% endif %}> 3 ⭐
                 <br>
-                <input type="radio" name="rating" value="2" {% if book.punctuation == 2 %}checked{% endif %}>2⭐
+                <input type="radio" name="rating" value="2" {% if book.punctuation == 2 %}checked{% endif %}> 2 ⭐
                 <br>
-                <input type="radio" name="rating" value="1" {% if book.punctuation == 1 %}checked{% endif %}>1⭐
+                <input type="radio" name="rating" value="1" {% if book.punctuation == 1 %}checked{% endif %}> 1 ⭐
             </div>
         </div>
-        <br>
         <div class="form-group">
             <img src="{{ url_for('static', filename = book.image ) }}">
+        </div>
+        <div class="form-group">
             <input type="file" id="image" name="image" class="form-control">
         </div>
         <div class="text-center">

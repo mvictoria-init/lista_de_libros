@@ -22,11 +22,14 @@
             {% for book in books | reverse %}
                 {% if g.user.id == book.created_by %}
                 <tr>
-                    <th class="content-project"><img src="{{ url_for('static', filename = book.image ) }}"></th>
+                    <td class="content-project">
+                        <img src="{{ url_for('static', filename = book.image ) }}">
+                    </td>
                     <td>
                         <h5 class="star">{{ book.title }} - {{ book.author }}</h5>
                         <p class="text_align">{{ book.desc }}</p>
-                        <h6 class="time">{{ book.created.strftime('%d de %B %Y') }}</h6>
+                        <h6 class="time">{{ book.created.strftime('%d de %B %Y, %H:%M:%S') }}</h6>
+                        <br>
                     </td>
                     <td>
                         {% if book.state == false %}
@@ -49,6 +52,7 @@
                 </tr>
                 {% endif%}
             {% endfor %}
+            
         </tbody>
     </table>
 </section>

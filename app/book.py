@@ -16,7 +16,6 @@ bp = Blueprint('book', __name__, url_prefix='/libro')
 def index():
     
     books = Book.query.all()
-    print(books)
     return render_template('book/index.html', books=books)
 
 @bp.route('/create', methods = ['GET', 'POST'])

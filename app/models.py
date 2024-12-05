@@ -28,7 +28,7 @@ class Book(db.Model):
     n_page = db.Column(Integer)  # Optional, can be nullable
     punctuation = db.Column(Integer)
     image = db.Column(String)  # Optional, can be nullable
-    created = db.Column(DateTime, nullable=False, default=datetime.utcnow)
+    created = db.Column(DateTime, nullable=False, default=datetime.utcnow())
     
     state = db.Column(Boolean, default=False)
     
