@@ -7,6 +7,7 @@ from flask import (Blueprint,
 # para importar los modelos
 from .models import User
 from app import db
+import uuid
 
 # para la seguridad o encriptamiento de las contraseñas
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -72,8 +73,11 @@ def login():
 
 @bp.route('/logout')
 def logout():
-    session.clear()
-    return redirect(url_for('index'))
+    
+    session.clear()  # Borrar la sesión
+    flash('¡Has cerrado sesión correctamente!', 'success')  # Mostrar mensaje de confirmación
+    response = redirect(url_for('index', _external=True, _uuid=uuid.uuid4()))
+    return response
 
 # to keep session
 @bp.before_app_request
